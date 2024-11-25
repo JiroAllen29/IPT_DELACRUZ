@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #b92b27, #1565c0); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: 90%;
+    background: linear-gradient(135deg, #98cdfd, #db65d7, #ff824e); /* Gradient background close to your image */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px; /* Added padding to prevent overlap with navbar */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f3f3f3; /* Light gray background for navbar */
+    border-bottom: 2px solid #000;
+    position: fixed; /* Fix navbar at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.logo img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    background-color: #039be5;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #0277bd;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+
+.text-section {
+    width: 50%;
+}
+
+.header {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 24px; /* Large font for elegance */
+    color: #ffffff; /* Gray color for a professional look */
+    margin-bottom: 20px; /* Spacing between paragraphs */
+    line-height: 1.6; /* Improved readability */
+}
+
+/* Button Styling */
+.button-wrapper {
+    margin-top: 30px; /* Space between paragraph and button */
+}
+
+.main-btn {
+    padding: 20px 40px; /* Bigger padding for larger button */
+    background-color: #ff5722;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px; /* Bigger font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background-color: #e64a19;
+}
+
+.image-box {
+    width: 40%;
+    padding: 20px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 300px; /* Set minimum height */
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    background-image: url('../images/jiro.png'); /* Add the image URL here */
+    background-size: cover; /* Cover the div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repetition */
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-section, .image-box {
+        width: 100%;
+    }
+}
