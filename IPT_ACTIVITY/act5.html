@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Theme Addition Tool</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd; /* Light blue background */
+            color: #0d47a1; /* Dark blue text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 45%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #1565c0; /* Blue border */
+            border-radius: 5px;
+            text-align: center;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        input:focus {
+            border-color: #0d47a1; /* Darker blue focus */
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #0d47a1;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #1565c0; /* Blue background */
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0d47a1; /* Darker blue hover */
+            transform: scale(1.05);
+        }
+
+        .toggle {
+            background-color: #42a5f5; /* Lighter blue */
+            margin-top: 15px;
+        }
+
+        .toggle:hover {
+            background-color: #1e88e5; /* Slightly darker on hover */
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #0d47a1;
+            color: #ffffff;
+        }
+
+        .dark-mode input {
+            background-color: #1976d2;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .dark-mode button {
+            background-color: #1e88e5;
+        }
+
+        .dark-mode button:hover {
+            background-color: #1565c0;
+        }
+
+        .dark-mode .toggle {
+            background-color: #90caf9; /* Pale blue toggle button */
+        }
+
+        .dark-mode .toggle:hover {
+            background-color: #64b5f6; /* Slightly darker pale blue */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-container">
+            <input type="number" id="num1" placeholder="First Number">
+            <input type="number" id="num2" placeholder="Second Number">
+        </div>
+        <button onclick="addNumbers()">Add Numbers</button>
+        <p class="result" id="result"></p>
+        <button class="toggle" onclick="toggleTheme()">Toggle Dark/Light Mode</button>
+    </div>
+
+    <script>
+        // Function to add two numbers
+        function addNumbers() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const resultElement = document.getElementById('result');
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resultElement.textContent = "Please enter valid numbers.";
+            } else {
+                const sum = num1 + num2;
+                resultElement.textContent = `Result: ${sum}`;
+            }
+        }
+
+        // Function to toggle between light and dark mode
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
